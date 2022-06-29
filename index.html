@@ -1,127 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSC3007 Milestone 1</title>
     <style>
-        p {text-align: center;}
-        div {text-align: center;}
-        img {text-align: center;}
-        li {font-size: 1.5rem;}
+      p {
+        text-align: center;
+      }
+      div {
+        text-align: center;
+      }
+      img {
+        text-align: center;
+        max-width: 100%;
+        height: auto;
+      }
+      li {
+        font-size: 1.5rem;
+      }
     </style>
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header class="container-lg">
-        <h1><strong>Milestone 1</strong></h1>
+      <h1><strong>Milestone 1</strong></h1>
     </header>
-   
+
     <section class="container-lg">
-        <h2><strong>Critique 1 - Fast food</strong></h2>
-        <img src="fastfood.png">
-        <p><a href="http://www.princeton.edu/~ina/infographics/starbucks.html">http://www.princeton.edu/~ina/infographics/starbucks.html</a></p>
-        
-        <h3>What is the data like ?</h3>
-        <ul>
-            <li>
-                Two major brands on their global presence (Starbucks & Mcdonalds).
-            </li>
-            <li>
-                Countries which Starbucks source their products
-            </li>
-            <li>
-                No. of restaurants based on the countries (Starbucks & Mcdonalds)
-            </li>
-            <li>
-                Dataset is based on the records from 1987 to 2003
-            </li>
-        </ul>
-        <h3>Why must we do this visualization </h3>
-        <ul>
-            <li>
-                View the amount of Starbucks store being open worldwide from the year 1987 to 2003.
-            </li>
-            <li>
-                Comparison of Mcdonald sales with other major franchises e.g. Taco Bell, Burger King.
-            </li>
-            <li>
-                Able to know which countries has the most Starbucks & Mcdonalds store.
-            </li>
-            <li>
-                Able to know what products Starbucks source from a particular country.
-            </li>
-        </ul>
-        <h3>Idiom Evaluation: Method of Representation</h3>
-        <ul>
-            <li>
-                Using the size of the circles to indicate the amount of stores in the countries is not feasible as the bigger circles will overlap the smaller ones & misinterpreting values stored in each country.
-            </li>
-            <li>
-                X axis indication of Starbucks stores open over the years is being displayed in the range. Forcing end users to count and find out which specific year they want.
-            </li>
-            <li>
-                Usings icon size to match overall sales when comparing across franchises does not gives much information as they have to refer to the figures labelled above them them.
-            </li>
-        </ul>
-        <h3>How (Improving the visualization)</h3>
-        <ul>
-            <li>
-                Amount of stores for Starbucks & Mcdonalds. We could use choropleth map with a legend to show the amount of amount of stores for each countries.
-            </li>
-            <li>
-                Comparison of sales between the famous franchises we should use a barchart.
-            </li>
-            <li>
-                Starbucks stores cylinder chart we could use a line graph to visualize the amount of stores open over the years.
-            </li>
-            <li>
-                Tooltip to show additional information from the particular country based on the world map e.g. products they source, no. of stores.
-            </li>
-        </ul>
-        <h3>Proposed Visualization</h3>
-        <img src = "idea1Proposal.png">
+      <h2><strong>Critique 1 - Fast food</strong></h2>
+      <img src="fastfood.png" />
+      <p>
+        <a href="http://www.princeton.edu/~ina/infographics/starbucks.html"
+          >http://www.princeton.edu/~ina/infographics/starbucks.html</a
+        >
+      </p>
+
+      <h3>What is the data like ?</h3>
+      <ul>
+        <li>
+          Two major brands on their global presence (Starbucks & Mcdonalds).
+        </li>
+        <li>Countries which Starbucks source their products</li>
+        <li>
+          No. of restaurants based on the countries (Starbucks & Mcdonalds)
+        </li>
+        <li>Dataset is based on the records from 1987 to 2003</li>
+      </ul>
+      <h3>Why must we do this visualization</h3>
+      <ul>
+        <li>
+          View the amount of Starbucks store being open worldwide from the year
+          1987 to 2003.
+        </li>
+        <li>
+          Comparison of Mcdonald sales with other major franchises e.g. Taco
+          Bell, Burger King.
+        </li>
+        <li>
+          Able to know which countries has the most Starbucks & Mcdonalds store.
+        </li>
+        <li>
+          Able to know what products Starbucks source from a particular country.
+        </li>
+      </ul>
+      <h3>Idiom Evaluation: Method of Representation</h3>
+      <ul>
+        <li>
+          Using the size of the circles to indicate the amount of stores in the
+          countries is not feasible as the bigger circles will overlap the
+          smaller ones & misinterpreting values stored in each country.
+        </li>
+        <li>
+          X axis indication of Starbucks stores open over the years is being
+          displayed in the range. Forcing end users to count and find out which
+          specific year they want.
+        </li>
+        <li>
+          Usings icon size to match overall sales when comparing across
+          franchises does not gives much information as they have to refer to
+          the figures labelled above them them.
+        </li>
+      </ul>
+      <h3>How (Improving the visualization)</h3>
+      <ul>
+        <li>
+          Amount of stores for Starbucks & Mcdonalds. We could use choropleth
+          map with a legend to show the amount of amount of stores for each
+          countries.
+        </li>
+        <li>
+          Comparison of sales between the famous franchises we should use a
+          barchart.
+        </li>
+        <li>
+          Starbucks stores cylinder chart we could use a line graph to visualize
+          the amount of stores open over the years.
+        </li>
+        <li>
+          Tooltip to show additional information from the particular country
+          based on the world map e.g. products they source, no. of stores.
+        </li>
+      </ul>
+      <h3>Proposed Visualization</h3>
+      <img src="idea1Proposal.png" />
     </section>
 
-    <br><br>
+    <br /><br />
     <section class="container-lg">
-        <h2><strong>Critique 2 - Air travel passenger movement</strong></h2>
-        <img src="airline.png">
-        <p><a href="https://www.changiairport.com/corporate/our-expertise/air-hub/traffic-statistics.html#aem-ajaxpopup">https://www.changiairport.com/corporate/our-expertise/air-hub/traffic-statistics.html#aem-ajaxpopup</a></p>
+      <h2><strong>Critique 2 - Air travel passenger movement</strong></h2>
+      <img src="airline.png" />
+      <p>
+        <a
+          href="https://www.changiairport.com/corporate/our-expertise/air-hub/traffic-statistics.html#aem-ajaxpopup"
+          >https://www.changiairport.com/corporate/our-expertise/air-hub/traffic-statistics.html#aem-ajaxpopup</a
+        >
+      </p>
 
-        <h3>Why must we do this visualization ?</h3>
-        <ul>
-            <li>
-                To visualise the movement of passengers over time.
-            </li>
-            <li>
-                Identify top countries where passengers arrived / departed from.
-            </li>
-            <li>
-                Provide more information of passenger movement for a specific country.
-            </li>
-        </ul>
-        <h3>How (Improving the visualization)</h3>
-        <ul>
-            <li>
-                World map geoJSON to map passenger movement data to countries.
-            </li>
-            <li>
-                Allow user to filter by year, search by countries, etc.
-            </li>
-            <li>
-                Tooltip to show more information of a specific country.
-            </li>
-            <li>
-                On click, able to show additional information such as top 3 countries for arrival / departure.
-            </li>
-        </ul>
-        <h3>Proposed improvement</h3>
-        <img src="idea2Proposal.png">
-        <p>Datasource: <br><a href="https://data.gov.sg/dataset/air-passenger-departures-total-by-region-and-selected-country-of-disembarkation">https://data.gov.sg/dataset/air-passenger-departures-total-by-region-and-selected-country-of-disembarkation</a><br><a href="https://data.gov.sg/dataset/air-passenger-arrivals-total-by-region-and-selected-country-of-embarkation ">https://data.gov.sg/dataset/air-passenger-arrivals-total-by-region-and-selected-country-of-embarkation</a></p>
+      <h3>Why must we do this visualization ?</h3>
+      <ul>
+        <li>To visualise the movement of passengers over time.</li>
+        <li>
+          Identify top countries where passengers arrived / departed from.
+        </li>
+        <li>
+          Provide more information of passenger movement for a specific country.
+        </li>
+      </ul>
+      <h3>How (Improving the visualization)</h3>
+      <ul>
+        <li>World map geoJSON to map passenger movement data to countries.</li>
+        <li>Allow user to filter by year, search by countries, etc.</li>
+        <li>Tooltip to show more information of a specific country.</li>
+        <li>
+          On click, able to show additional information such as top 3 countries
+          for arrival / departure.
+        </li>
+      </ul>
+      <h3>Proposed improvement</h3>
+      <img src="idea2Proposal.png" />
+      <p>
+        Datasource: <br /><a
+          href="https://data.gov.sg/dataset/air-passenger-departures-total-by-region-and-selected-country-of-disembarkation"
+          >https://data.gov.sg/dataset/air-passenger-departures-total-by-region-and-selected-country-of-disembarkation</a
+        ><br /><a
+          href="https://data.gov.sg/dataset/air-passenger-arrivals-total-by-region-and-selected-country-of-embarkation "
+          >https://data.gov.sg/dataset/air-passenger-arrivals-total-by-region-and-selected-country-of-embarkation</a
+        >
+      </p>
     </section>
-    <br><br><br><br><br>
-</body>
+    <br /><br /><br /><br /><br />
+  </body>
 </html>
