@@ -16,13 +16,6 @@ Promise.all([
   d3.csv("./data/total-air-passenger-departures-by-country.csv"),
   d3.csv("./data/total-air-passenger-arrivals-by-country.csv"),
 ]).then((data) => {
-  /*
-  In percentage.
-
-  Like from Jan 2020 -Jan 2021, passengers movement increased/ decreased by 10% for country X.
-
-  */
-
   // Need to use front-end user input the months range
   let departStartMonth = data[1].filter((date) => date.month === "2012-02");
   let departEndMonth = data[1].filter((date) => date.month === "2020-02");
@@ -60,7 +53,7 @@ Promise.all([
 
   let color_scale = d3
     .scaleThreshold()
-    .domain([-100, -80, -60, -40, -10, 0, 20, 40, 60, 80, 100])
+    .domain([-100, -80, -60, -40, -10, 0, 10, 40, 60, 80, 100])
     .range(negativePercentageColors.concat(positivePercentageColors));
 
   svg
@@ -94,7 +87,20 @@ Promise.all([
         .style("stroke-width", 1)
         .style("opacity", 1);
     });
+
+  legend({
+    color: color_scale,
+    title: "Passenger Movement (%)",
+    marginLeft: 2,
+  });
 });
+
+/*
+  In percentage.
+
+  Like from Jan 2020 -Jan 2021, passengers movement increased/ decreased by 10% for country X.
+
+*/
 
 function percIncrease(startDate, endDate) {
   let percent;
