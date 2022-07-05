@@ -55,18 +55,25 @@ Promise.all([
 */
 function datasetToggle(option, data) {
   let optionValue;
+  let tooltipSentence;
 
   let startDate; // Testing Purpose (Remove When Date Range Is Done)
   let endDate; // Testing Purpose (Remove When Date Range Is Done)
 
   if (option === "departure") {
-    optionValue = 1;
     startDate = "2012-02";
     endDate = "2020-02";
+    optionValue = 1;
+    tooltipSentence = `${
+      option[0].toUpperCase() + option.slice(1)
+    } From Singapore`;
   } else {
     startDate = "2012-02";
     endDate = "2019-08";
     optionValue = 2;
+    tooltipSentence = `${
+      option[0].toUpperCase() + option.slice(1)
+    } To Singapore`;
   }
 
   let startMonth = data[optionValue].filter((date) => date.month === startDate);
@@ -125,9 +132,9 @@ function datasetToggle(option, data) {
       );
 
       if (flightPercentage[d.properties.name] === undefined) {
-        datasetType[
-          "innerText" in datasetType ? "innerText" : "textContent"
-        ] = `${option[0].toUpperCase() + option.slice(1)} To Singapore`;
+        datasetType["innerText" in datasetType ? "innerText" : "textContent"] =
+          tooltipSentence;
+
         startMonthTotalPassenger[
           "innerText" in startMonthTotalPassenger ? "innerText" : "textContent"
         ] = "Total Passengers: 0";
@@ -136,9 +143,8 @@ function datasetToggle(option, data) {
           "innerText" in endMonthTotalPassenger ? "innerText" : "textContent"
         ] = "Total Passengers: 0";
       } else {
-        datasetType[
-          "innerText" in datasetType ? "innerText" : "textContent"
-        ] = `${option[0].toUpperCase() + option.slice(1)} To Singapore`;
+        datasetType["innerText" in datasetType ? "innerText" : "textContent"] =
+          tooltipSentence;
 
         startMonthTotalPassenger[
           "innerText" in startMonthTotalPassenger ? "innerText" : "textContent"
