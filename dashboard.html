@@ -1,8 +1,13 @@
 <html>
-  <head>
-    <style></style>
-  </head>
+  <head> </head>
   <body>
+    <div>
+      <select id="opts">
+        <option selected="selected" value="arrival">Arrival</option>
+        <option value="departure">Departure</option>
+      </select>
+    </div>
+
     <svg
       id="worldmap"
       style="background-color: #c2dfff"
@@ -10,7 +15,47 @@
       height="600"
     >
       <g class="legend"></g>
+      <g>
+        <rect
+          class="svg-tooltip"
+          x="380"
+          y="460"
+          width="300"
+          height="130"
+          opacity="0"
+        ></rect>
+        <text
+          id="dataset-type"
+          x="390"
+          y="500"
+          font-size="15"
+          fill="black"
+          font-weight="bold"
+        >
+          <!-- Arrival To Singapore -->
+        </text>
+
+        <text
+          id="start-month-total-passenger"
+          x="390"
+          y="530"
+          font-size="15"
+          fill="black"
+        >
+          <!-- No. Of Passengers Arrived: 888 -->
+        </text>
+        <text
+          id="end-month-total-passenger"
+          x="390"
+          y="560"
+          font-size="15"
+          fill="black"
+        >
+          <!-- No. Of Passengers Arrived: 888 -->
+        </text>
+      </g>
     </svg>
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./script/legend.js"></script>
     <script src="./script/worldmap.js"></script>
