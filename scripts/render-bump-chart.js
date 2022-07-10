@@ -3,13 +3,18 @@ function renderBumpChart(data) {
   let inputDirection = document.querySelector(
     "[name='direction']:checked"
   ).value;
-  let selectedYear = "2017";
+  let selectedYear = "2018";
+
+  let paras = document.getElementsByClassName("bump-chart-wrapper");
 
   // Direction Input
   Array.from(document.querySelectorAll("[name='direction']")).forEach(
     (input) => {
       input.addEventListener("input", (event) => {
         inputDirection = event.target.value;
+        while (paras[0]) {
+          paras[0].parentNode.removeChild(paras[0]);
+        }
         updateVisualization();
       });
     }
@@ -17,7 +22,11 @@ function renderBumpChart(data) {
 
   const dateInputElement = document.getElementById("bumpChartYearInput");
   dateInputElement.addEventListener("datechange", (event) => {
+    while (paras[0]) {
+      paras[0].parentNode.removeChild(paras[0]);
+    }
     selectedYear = event.detail;
+
     updateVisualization();
   });
   new DateInput({
@@ -37,6 +46,6 @@ function renderBumpChart(data) {
   function updateVisualization() {
     bumpChart.inputDirection = inputDirection;
     bumpChart.selectedYear = selectedYear;
-    bumpChart.updateVisualization();
+    bumpChart.initizalizeBumpChart();
   }
 }

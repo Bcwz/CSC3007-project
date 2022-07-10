@@ -8,7 +8,6 @@ class BumpChart {
   }
 
   initizalizeBumpChart() {
-    console.log("Initizalize Bump Chart");
     this.marginLeft = 105;
     this.marginRight = 105;
     this.marginTop = 20;
@@ -30,12 +29,16 @@ class BumpChart {
       .select(this.parentElement)
       .classed("bump-chart", true)
       .append("div")
-      .attr("class", "chart-wrapper");
+      .attr("class", "bump-chart-wrapper");
 
     this.svg = this.wrapper.append("svg").attr("class", "chart-svg");
 
     this.resizeVisualization();
     this.updateVisualization();
+
+    window.addEventListener("resize", () => {
+      this.resizeVisualization();
+    });
 
     this.svg
       .append("g")
@@ -65,7 +68,7 @@ class BumpChart {
   }
 
   updateVisualization() {
-    console.log("Updating Bump Chart Visualization");
+    console.log(this.selectedYear);
     this.displayData = this.data.filter(
       (d) =>
         d.direction === this.inputDirection &&
@@ -76,6 +79,8 @@ class BumpChart {
 
     this.xDomain = new Set(this.X);
     this.yDomain = new Set(this.Y);
+
+    console.log(this.yDomain);
 
     // this.xScale.domain(this.xDomain);
     // this.yScale.domain(this.yDomain);
@@ -242,7 +247,6 @@ class BumpChart {
         "transform",
         (d, i) => `translate(${this.bx(i)},${this.by(d.value.rank)})`
       )
-      //.call(g => g.append("title").text((d, i) => `${d.territory} - ${quarters[i]}\n${toCurrency(d.profit.profit)}`));
       .call(this.title);
 
     bumps.append("circle").attr("r", this.drawingStyle ? 12 : this.bumpRadius);
@@ -269,8 +273,6 @@ class BumpChart {
           true
         )
       );
-
-    // return this.svg.node();
   }
 
   chartData() {
