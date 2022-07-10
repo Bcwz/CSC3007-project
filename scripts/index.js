@@ -33,6 +33,7 @@ Promise.all([
     const data = processDataset(csvs);
     renderMap(worldMap, data);
     renderSlopeChart(data);
+    renderBumpChart(data);
   })
   .catch((error) => {
     console.log(error);

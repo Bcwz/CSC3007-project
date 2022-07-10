@@ -85,6 +85,16 @@
               </div>
             </div>
           </div>
+
+          <!--  Bump Chart -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="vstack gap-3">
+                <div id="bumpChartYearInput"></div>
+                <div id="bumpChartArea"></div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <!-- Bootstrap -->
@@ -98,12 +108,14 @@
     <!-- Topojson -->
     <script src="https://unpkg.com/topojson@3"></script>
     <!-- Custom JS -->
-    <script src="scripts/choropleth-map.js"></script>
     <script src="scripts/date-input.js"></script>
     <script src="scripts/tooltip.js"></script>
     <script src="scripts/render-choropleth-map.js"></script>
+    <script src="scripts/choropleth-map.js"></script>
     <script src="scripts/render-slope-chart.js"></script>
     <script src="scripts/slope-chart.js"></script>
+    <script src="scripts/render-bump-chart.js"></script>
+    <script src="scripts/bump-chart.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>
