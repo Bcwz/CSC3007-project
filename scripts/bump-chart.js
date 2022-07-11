@@ -68,7 +68,6 @@ class BumpChart {
   }
 
   updateVisualization() {
-    console.log(this.selectedYear);
     this.displayData = this.data.filter(
       (d) =>
         d.direction === this.inputDirection &&
@@ -80,12 +79,10 @@ class BumpChart {
     this.xDomain = new Set(this.X);
     this.yDomain = new Set(this.Y);
 
-    console.log(this.yDomain);
-
     // this.xScale.domain(this.xDomain);
     // this.yScale.domain(this.yDomain);
 
-    const len = this.yDomain.size - 1;
+    const len = this.xDomain.size - 1;
     const ranking = this.chartData().map((d, i) => ({
       name: Array.from(this.yDomain)[i],
       first: d[0].rank,
@@ -184,26 +181,27 @@ class BumpChart {
         series
           .filter((s) => s !== d)
           .transition()
-          .duration(500)
+          .duration(300)
           .attr("fill", "#ddd")
           .attr("stroke", "#ddd");
 
-        markTick(leftY, 0, d);
-        markTick(rightY, this.yDomain.size - 1, d);
+        markTick(leftY, 0, d, this.color);
+        markTick(rightY, this.xDomain.size - 1, d, this.color);
 
-        function markTick(axis, pos, d) {
+        function markTick(axis, pos, d, color) {
           axis
             .selectAll(".tick text")
             .filter((s, i) => i === d[pos].rank)
             .transition()
-            .duration(500)
-            .attr("font-weight", "bold");
+            .duration(300)
+            .attr("font-weight", "bold")
+            .attr("fill", color(d[0].rank));
         }
       })
       .on("mouseout", () => {
         series
           .transition()
-          .duration(500)
+          .duration(300)
           .attr("fill", (s) => this.color(s[0].rank))
           .attr("stroke", (s) => this.color(s[0].rank));
         restoreTicks(leftY);
@@ -213,7 +211,7 @@ class BumpChart {
           axis
             .selectAll(".tick text")
             .transition()
-            .duration(500)
+            .duration(300)
             .attr("font-weight", "normal")
             .attr("fill", "black");
         }
@@ -238,7 +236,7 @@ class BumpChart {
         d.map((v) => ({
           name: Array.from(this.yDomain)[i],
           value: v,
-          first: 100,
+          first: d[0].rank,
           //   first: d[0].value,
         }))
       )

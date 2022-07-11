@@ -3,7 +3,7 @@ function renderBumpChart(data) {
   let inputDirection = document.querySelector(
     "[name='direction']:checked"
   ).value;
-  let selectedYear = "2018";
+  let selectedYear = "2019";
 
   let paras = document.getElementsByClassName("bump-chart-wrapper");
 
